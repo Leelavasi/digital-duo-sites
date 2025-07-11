@@ -1,6 +1,8 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, Palette, Zap } from "lucide-react";
+import { GiMechanicalArm } from "react-icons/gi";
+import { LuBrainCircuit } from "react-icons/lu";
+import {BsBuildings  } from "react-icons/bs"
 
 const About = () => {
   return (
@@ -11,16 +13,16 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            I'm a passionate developer with expertise in modern web technologies. 
-            I love turning ideas into beautiful, functional applications that make a difference.
+            I'm an architect with a strong foundation in design and technical innovation, I did a Master's in Robotics for Advanced Architecture. Experienced in digital fabrication, site coordination, and computational tools such as Rhino, Grasshopper, and ROS. Skilled in managing architectural projects from concept to execution with a focus on precision and efficiency
+            
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="bg-white/10 backdrop-blur-sm border-gray-700 hover:bg-white/20 transition-all duration-300 hover:scale-105">
             <CardContent className="p-8 text-center">
-              <Code className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">Clean Code</h3>
+              <BsBuildings className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-3">Architectural and Interior Design</h3>
               <p className="text-gray-300">
                 Writing maintainable, scalable code that follows best practices and modern standards.
               </p>
@@ -29,8 +31,8 @@ const About = () => {
           
           <Card className="bg-white/10 backdrop-blur-sm border-gray-700 hover:bg-white/20 transition-all duration-300 hover:scale-105">
             <CardContent className="p-8 text-center">
-              <Palette className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">Design Focus</h3>
+              <LuBrainCircuit className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-3">Computational & Generative Design</h3>
               <p className="text-gray-300">
                 Creating intuitive user experiences with attention to detail and modern design principles.
               </p>
@@ -39,8 +41,8 @@ const About = () => {
           
           <Card className="bg-white/10 backdrop-blur-sm border-gray-700 hover:bg-white/20 transition-all duration-300 hover:scale-105">
             <CardContent className="p-8 text-center">
-              <Zap className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">Performance</h3>
+              <GiMechanicalArm className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-3">Robotic Manufacturing and Digital Fabrication</h3>
               <p className="text-gray-300">
                 Optimizing applications for speed, accessibility, and exceptional user experience.
               </p>
