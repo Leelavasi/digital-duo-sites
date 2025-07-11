@@ -1,5 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { GiMechanicalArm } from "react-icons/gi";
 import { LuBrainCircuit } from "react-icons/lu";
 import {BsBuildings  } from "react-icons/bs"
@@ -12,9 +13,23 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             About Me
           </h2>
+          
+          {/* Profile Image Section */}
+          <div className="flex justify-center mb-8">
+            <Avatar className="w-32 h-32 md:w-40 md:h-40 ring-4 ring-blue-400/30 hover:ring-blue-400/50 transition-all duration-300">
+              <AvatarImage 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop&crop=face" 
+                alt="Profile picture"
+                className="object-cover"
+              />
+              <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white text-2xl font-bold">
+                YN
+              </AvatarFallback>
+            </Avatar>
+          </div>
+          
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             I'm an architect with a strong foundation in design and technical innovation, I did a Master's in Robotics for Advanced Architecture. Experienced in digital fabrication, site coordination, and computational tools such as Rhino, Grasshopper, and ROS. Skilled in managing architectural projects from concept to execution with a focus on precision and efficiency
-            
           </p>
         </div>
         
