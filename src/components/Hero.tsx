@@ -14,11 +14,11 @@ const Hero = () => {
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
           Hi, I'm{" "}
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Leela Vasista Monavarthy 
+            Vasista Monavarthy 
           </span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Full Stack Developer & UI/UX Designer passionate about creating beautiful, functional digital experiences
+          Generative Designer | Computational Architect | Digital & Robotic Fabrication Specialist | Interior Designer
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
@@ -31,14 +31,11 @@ const Hero = () => {
         
         {/* Social Links */}
         <div className="flex justify-center space-x-6 mb-12">
-          <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+          <a href="https://github.com/Leelavasi"target="_blank" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
             <Github className="w-6 h-6" />
           </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+          <a href="https://www.linkedin.com/in/vasista-movarvarthy/" target="_blank" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
             <Linkedin className="w-6 h-6" />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
-            <Mail className="w-6 h-6" />
           </a>
         </div>
         
