@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const projects = [
@@ -63,10 +64,13 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                  <a href="#"  className="flex items-center gap-2 border-gray-600 text-gray-300 hover:scale-110 ">
+                  <Link 
+                    to={`/project/${index}`}
+                    className="flex items-center gap-2 border-gray-600 text-gray-300 hover:scale-110 transition-transform"
+                  >
                     See Details
                     <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
