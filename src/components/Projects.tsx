@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -9,25 +8,18 @@ const Projects = () => {
       description: "Architectural Projects Academic and Professional with Interiors ",
       image: "/Convention center.png",
       tech: ["Autocad", "Rhino", "Revit", "Sketchup","Lumion", "Photoshop"],
-      github: "#",
-      live: "#"
     },
     {
       title: "Generative Design",
       description: "Generative Design in-terms of sustainability and automation ",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80",
       tech: ["Grasshopper", "python", "Ladybug", "c#"],
-      github: "#",
-      live: "#"
     },
     {
       title: "Robotics and Digital Fabrication",
       description: "Leveraging robotic fabrication and digital fabrication",
       image: "/THE PEARL-1.png",
       tech: ["Robots", "ROS2", "Docker", "CNC"],
-      github: "#",
-      live: "#"
-
     }
   ];
 
@@ -71,14 +63,10 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="border-gray-600 text-gray-300 hover:bg-white hover:text-gray-900">
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button variant="outline" size="sm" className="border-gray-600 text-gray-300 hover:bg-white hover:text-gray-900">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live
-                  </Button>
+                  <a href="#"  className="flex items-center gap-2 border-gray-600 text-gray-300 hover:scale-110 ">
+                    See Details
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
                 </div>
               </CardContent>
             </Card>
