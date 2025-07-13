@@ -2,12 +2,12 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ProjectDetails = () => {
-  const { projectId } = useParams<{ projectId: string }>();
+const PortfolioDetails = () => {
+  const { portfolioId } = useParams<{ portfolioId: string }>();
   
-  const projects = [
+  const portfolios = [
     {
-      title: "Architectural Projects",
+      title: "Architectural Portfolio",
       description: "Architectural Projects Academic and Professional with Interiors ",
       image: "/Convention center.png",
       tech: ["Autocad", "Rhino", "Revit", "Sketchup","Lumion", "Photoshop"],
@@ -29,10 +29,10 @@ const ProjectDetails = () => {
     }
   ];
 
-  const projectIndex = parseInt(projectId || "0");
-  const project = projects[projectIndex];
+  const portfolioIndex = parseInt(portfolioId || "0");
+  const portfolio = portfolios[portfolioIndex];
 
-  if (!project) {
+  if (!portfolio) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
@@ -59,8 +59,8 @@ const ProjectDetails = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="aspect-video overflow-hidden rounded-lg">
             <img 
-              src={project.image} 
-              alt={project.title}
+              src={portfolio.image} 
+              alt={portfolio.title}
               className="w-full h-full object-cover"
             />
           </div>
@@ -68,20 +68,20 @@ const ProjectDetails = () => {
           <div className="space-y-6">
             <div>
               <h1 className="text-4xl font-bold text-foreground mb-4">
-                {project.title}
+                {portfolio.title}
               </h1>
               <p className="text-xl text-muted-foreground mb-6">
-                {project.description}
+                {portfolio.description}
               </p>
               <p className="text-foreground leading-relaxed">
-                {project.fullDescription}
+                {portfolio.fullDescription}
               </p>
             </div>
             
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-3">Technologies Used</h3>
               <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech, index) => (
+                {portfolio.tech.map((tech, index) => (
                   <span 
                     key={index}
                     className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm"
@@ -98,4 +98,4 @@ const ProjectDetails = () => {
   );
 };
 
-export default ProjectDetails;
+export default PortfolioDetails;
