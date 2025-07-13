@@ -5,28 +5,29 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "Architectural Projects",
+      description: "Architectural Projects Academic and Professional with Interiors ",
+      image: "/Convention center.png",
+      tech: ["Autocad", "Rhino", "Revit", "Sketchup","Lumion", "Photoshop"],
       github: "#",
       live: "#"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative project management tool with real-time updates and team features.",
+      title: "Generative Design",
+      description: "Generative Design in-terms of sustainability and automation ",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80",
-      tech: ["React", "TypeScript", "Firebase", "Tailwind"],
+      tech: ["Grasshopper", "python", "Ladybug", "c#"],
       github: "#",
       live: "#"
     },
     {
-      title: "Weather Dashboard",
-      description: "A beautiful weather app with location-based forecasts and interactive charts.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80",
-      tech: ["React", "OpenWeather API", "Chart.js", "CSS3"],
+      title: "Robotics and Digital Fabrication",
+      description: "Leveraging robotic fabrication and digital fabrication",
+      image: "/THE PEARL-1.png",
+      tech: ["Robots", "ROS2", "Docker", "CNC"],
       github: "#",
       live: "#"
+
     }
   ];
 
