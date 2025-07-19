@@ -8,7 +8,7 @@ const PortfolioDetails = () => {
   
   const portfolios = [
     {
-      title: "Architectural Portfolio",
+      title: "Convention Center",
       description: "Architectural Projects Academic and Professional with Interiors ",
       image: "/Convention center.png",
       tech: ["Autocad", "Rhino", "Revit", "Sketchup","Lumion", "Photoshop"],
@@ -19,6 +19,7 @@ const PortfolioDetails = () => {
           description: "A contemporary convention center with flexible spaces and sustainable design features",
           image: "/Convention center.png",
           year: "2023",
+          
           location: "Downtown District"
         },
         {
@@ -169,27 +170,29 @@ const PortfolioDetails = () => {
           <h2 className="text-3xl font-bold text-foreground mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolio.projects.map((project, index) => (
-              <Card key={index} className="bg-card border-border hover:bg-card/80 transition-colors">
-                <div className="aspect-video overflow-hidden rounded-t-lg">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-foreground">{project.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex justify-between items-center text-sm text-muted-foreground">
-                    <span>{project.year}</span>
-                    <span>{project.location}</span>
+              <Link to="/project/1" style={{ textDecoration: 'none' }}>
+                <Card key={index} className="bg-card border-border hover:bg-card/80 transition-colors">
+                  <div className="aspect-video overflow-hidden rounded-t-lg">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                </CardContent>
-              </Card>
+                  <CardHeader>
+                    <CardTitle className="text-foreground">{project.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground">
+                      {project.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex justify-between items-center text-sm text-muted-foreground">
+                      <span>{project.year}</span>
+                      <span>{project.location}</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
