@@ -232,6 +232,39 @@ const ProjectDetails = () => {
           </div>
         </div>
 
+        {/* Comments Section */}
+        <div className="mt-16">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-foreground">Comments</CardTitle>
+              <p className="text-muted-foreground">
+                Share your thoughts about this project.
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="comment">Your Comment</Label>
+                  <Textarea
+                    id="comment"
+                    placeholder="Write your comment here..."
+                    rows={4}
+                  />
+                </div>
+                
+                <div className="flex gap-3">
+                  <Button type="button">
+                    Submit
+                  </Button>
+                  <Button type="button" variant="outline">
+                    Cancel
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Project Feedback Form */}
         <div className="mt-16">
           <Card>
