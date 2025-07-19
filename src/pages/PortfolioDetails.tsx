@@ -170,8 +170,8 @@ const PortfolioDetails = () => {
           <h2 className="text-3xl font-bold text-foreground mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolio.projects.map((project, index) => (
-              <Link to="/project/1" style={{ textDecoration: 'none' }}>
-                <Card key={index} className="bg-card border-border hover:bg-card/80 transition-colors">
+              <Link key={index} to={`/project/${portfolioIndex}/${index}`} style={{ textDecoration: 'none' }}>
+                <Card className="bg-card border-border hover:bg-card/80 transition-colors">
                   <div className="aspect-video overflow-hidden rounded-t-lg">
                     <img 
                       src={project.image} 
