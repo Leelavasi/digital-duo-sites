@@ -1,9 +1,22 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const ProjectDetails = () => {
   const { portfolioId, projectId } = useParams<{ portfolioId: string; projectId: string }>();
+  const { toast } = useToast();
+  const [rating, setRating] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    comments: ""
+  });
   
   const portfolios = [
     {
@@ -119,6 +132,34 @@ const ProjectDetails = () => {
   const portfolio = portfolios[portfolioIndex];
   const project = portfolio?.projects[projectIndex];
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmitFeedback = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.comments || rating === 0) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields and provide a rating",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    toast({
+      title: "Feedback Submitted",
+      description: "Thank you for your feedback! We appreciate your input.",
+    });
+    
+    // Reset form
+    setFormData({ name: "", email: "", comments: "" });
+    setRating(0);
+  };
+
   if (!portfolio || !project) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -189,6 +230,87 @@ const ProjectDetails = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Project Feedback Form */}
+        <div className="mt-16">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-foreground">Project Feedback</CardTitle>
+              <p className="text-muted-foreground">
+                We'd love to hear your thoughts on this project. Your feedback helps us improve our work.
+              </p>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmitFeedback} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Your name"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="your.email@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label>Rating</Label>
+                  <div className="flex items-center gap-1">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        type="button"
+                        onClick={() => setRating(star)}
+                        className={`p-1 rounded ${
+                          star <= rating
+                            ? "text-primary"
+                            : "text-muted-foreground hover:text-primary"
+                        }`}
+                      >
+                        <Star className="w-6 h-6 fill-current" />
+                      </button>
+                    ))}
+                    <span className="ml-2 text-sm text-muted-foreground">
+                      {rating > 0 ? `${rating}/5` : "Please rate this project"}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="comments">Comments</Label>
+                  <Textarea
+                    id="comments"
+                    name="comments"
+                    value={formData.comments}
+                    onChange={handleInputChange}
+                    placeholder="Share your thoughts about this project..."
+                    rows={4}
+                    required
+                  />
+                </div>
+
+                <Button type="submit" className="w-full">
+                  Submit Feedback
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
