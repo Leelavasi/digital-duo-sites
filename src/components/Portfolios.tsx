@@ -41,42 +41,35 @@ const Portfolios = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolios.map((portfolio, index) => (
-            <Card key={index} className="bg-white/10 backdrop-blur-sm border-gray-700 hover:bg-white/20 transition-all duration-300 hover:scale-105 overflow-hidden">
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={portfolio.image} 
-                  alt={portfolio.title}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-white">{portfolio.title}</CardTitle>
-                <CardDescription className="text-gray-300">
-                  {portfolio.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {portfolio.tech.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex}
-                      className="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+            <Link key={index} to={portfolio.linkTo} style={{textDecoration: 'none'}}>
+              <Card key={index} className="bg-white/10 backdrop-blur-sm border-gray-700 hover:bg-white/20 transition-all duration-300 hover:scale-105 overflow-hidden">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={portfolio.image} 
+                    alt={portfolio.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
-                <div className="flex gap-2">
-                  <Link 
-                    to={portfolio.linkTo}
-                    className="flex items-center gap-2 border-gray-600 text-gray-300 hover:scale-110 transition-transform"
-                  >
-                    See Details
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+                <CardHeader>
+                  <CardTitle className="text-white">{portfolio.title}</CardTitle>
+                  <CardDescription className="text-gray-300">
+                    {portfolio.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {portfolio.tech.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex}
+                        className="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

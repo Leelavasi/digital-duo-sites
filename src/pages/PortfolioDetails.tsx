@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const PortfolioDetails = () => {
   const { portfolioId } = useParams<{ portfolioId: string }>();
@@ -127,41 +128,29 @@ const PortfolioDetails = () => {
           Back to Home
         </Link>
         
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="aspect-video overflow-hidden rounded-lg">
-            <img 
-              src={portfolio.image} 
-              alt={portfolio.title}
-              className="w-full h-full object-cover"
-            />
+        <div className="space-y-6">
+          <div>
+            <h1 className="text-4xl font-bold text-foreground mb-4">
+              {portfolio.title}
+            </h1>
+            <p className="text-xl text-muted-foreground mb-6">
+              {portfolio.description}
+            </p>
+            <p className="text-foreground leading-relaxed">
+              {portfolio.fullDescription}
+            </p>
           </div>
           
-          <div className="space-y-6">
-            <div>
-              <h1 className="text-4xl font-bold text-foreground mb-4">
-                {portfolio.title}
-              </h1>
-              <p className="text-xl text-muted-foreground mb-6">
-                {portfolio.description}
-              </p>
-              <p className="text-foreground leading-relaxed">
-                {portfolio.fullDescription}
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold text-foreground mb-3">Technologies Used</h3>
-              <div className="flex flex-wrap gap-2">
-                {portfolio.tech.map((tech, index) => (
-                  <span 
-                    key={index}
-                    className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div className="flex flex-wrap gap-2">
+            {portfolio.tech.map((tech, index) => (
+              <Badge 
+                key={index}
+                variant="secondary"
+                className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white border-gray-600 px-4 py-2 text-sm hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 hover:scale-105"
+              >
+                {tech}
+              </Badge>
+            ))}
           </div>
         </div>
 

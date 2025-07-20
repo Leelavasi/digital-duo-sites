@@ -15,7 +15,6 @@ const Hero = () => {
     }
   }
 
-
   return (
     <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
       {/* Theme Toggle */}
@@ -31,7 +30,7 @@ const Hero = () => {
       <div className="max-w-4xl mx-auto text-center relative z-10 animate-fade-in">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
           Hi, I'm{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <span className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Vasista Monavarthy 
           </span>
         </h1>
@@ -40,13 +39,13 @@ const Hero = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button 
-            onClick={() => scrollToSection('projects')}
+            onClick={() => scrollToSection('portfolios')}
             size="lg" 
-            className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+            className="px-8 py-3 rounded-full"
           >
             View My Work
           </Button>
-          <Button onClick={() => scrollToSection('contact')} variant="outline" size="lg" className="border-gray-400 text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full transition-all duration-300">
+          <Button onClick={() => scrollToSection('contact')} variant="outline" size="lg" className="px-8 py-3 rounded-full">
             Get In Touch
           </Button>
         </div>

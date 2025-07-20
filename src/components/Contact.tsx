@@ -11,11 +11,10 @@ const Contact = () => {
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     if(!formRef) return; 
-    e.preventDefault
-    console.log('Email', new FormData(formRef.current))
-    console.log('E', e)
-
+    e.preventDefault();
+    console.log('Email', new FormData(formRef.current));
   }
+  
   return (
     <section id="contact" className="py-20 px-4 bg-black/20">
       <div className="max-w-6xl mx-auto">
@@ -95,7 +94,7 @@ const Contact = () => {
                   rows={6}
                   className="bg-white/10 border-gray-600 text-white placeholder:text-gray-400"
                 />
-                <Button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white py-3 rounded-full transition-all duration-300 hover:scale-105">
+                <Button type="submit" className="w-full py-3 rounded-full">
                   Send Message
                 </Button>
               </form>
